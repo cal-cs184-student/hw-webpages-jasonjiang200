@@ -54,7 +54,12 @@
 		First, we calculate the bounding box of the triangle. This means calculating the minimum and maximum x and y coordinate that appear among all 3 vertices. 
 		Next, we calculate the winding order of the vertices. This is done by calculating two vectors representing edges (AB and AC) of the triangle. With a clockwise winding order, the cross product will have a negative z-component and vice versa.
 		Finally, we iterate over each pixel that is within the bounding box of the rectangle. We sample the center of each pixel and consider the vector from each vertex to the pixel center. We take 3 cross products with 3 vectors representing the edges, each time checking the sign to see if the pixel center lies in the correct half plane to be within the triangle. Again, we use the sign of the z component to do this. If the pixel center is in all 3 half planes, we fill it in since it is inside the triangle.
-
+		
+		<figure>
+			<img src="screenshot_2-8_20-18-40.png" alt="task1pic" style="width:50%"/>
+			<figcaption>Rasterized triangles with disconnected section highlighted for skinny triangle.</figcaption>
+		</figure>
+			
 		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">

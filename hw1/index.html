@@ -67,27 +67,27 @@
 		The fill_pixel function needed to be updated in order to support having a sample rate. This makes sure that the correct sub-pixel is filled in.
 		The rasterize point function was updated to fill all subpixels with the same color, so that nothing would be lost after averaging.
 		Superampling ends up being useful because it acts like a low pass filter, blurring the image and attenuating higher frequencies to get rid of aliasing. As we see below, it can help get rid of disconnected portions in a triangle.
-		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
+		We can see that as the sampling rate goes up, the triangle's sharp corner looks better and better.
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
 				<td style="text-align: center;">
-				  <img src="lion.jpg" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="screenshot_2-8_20-18-40.png" width="400px"/>
+				  <figcaption>1x1 sampling.</figcaption>
 				</td>
 				<td style="text-align: center;">
-				  <img src="lion.jpg" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="screenshot_2-11_11-29-58.png" width="400px"/>
+				  <figcaption>2x2 supersampling.</figcaption>
 				</td>
 			  </tr>
 			  <tr>
 				<td style="text-align: center;">
-				  <img src="lion.jpg" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="screenshot_2-11_11-30-6.png" width="400px"/>
+				  <figcaption>3x3 supersampling.</figcaption>
 				</td>
 				<td style="text-align: center;">
-				  <img src="lion.jpg" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="screenshot_2-11_11-30-24.png" width="400px"/>
+				  <figcaption>4x4 supersamplings.</figcaption>
 				</td>
 			  </tr>
 			</table>

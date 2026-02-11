@@ -63,7 +63,10 @@
 
 		
 		<h2>Task 2: Antialiasing by Supersampling</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		In order to support supersampling, the sample buffer is sized up to be n times larger, where n is the sample rate. In the triangle rasterizing function, we now sample each pixel additional times For example, with 3x3 supersampling, we'd sample the pixel 1/6, 3/6, and 5/6 of the way across and down.
+		The fill_pixel function needed to be updated in order to support having a sample rate. This makes sure that the correct sub-pixel is filled in.
+		The rasterize point function was updated to fill all subpixels with the same color, so that nothing would be lost after averaging.
+		Superampling ends up being useful because it acts like a low pass filter, blurring the image and attenuating higher frequencies to get rid of aliasing. As we see below, it can help get rid of disconnected portions in a triangle.
 		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">

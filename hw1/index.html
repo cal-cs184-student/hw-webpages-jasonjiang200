@@ -119,7 +119,36 @@
 		</figure>
 		
 		<h2>Task 5: "Pixel sampling" for texture mapping</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		For texture mapping, we have a screen space and a texture space. Each pixel in screen space corresponds to a point in texture space. 
+		To texture the point, we could sample the closest pixel in texture space, but this can lead to aliasing artifacts.
+		Instead, we can use bilinear interpolation to sample the 4 closest pixels in texture space and take a weighted average of them, in a way analogous to barycentric coordinates.
+		We use linear interpolation in both the x and y direction to get a smooth result, which is why it is called bilinear.
+
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_16-21-50.png" width="400px"/>
+				  <figcaption>nearest sampling at 1 sample per pixel</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_16-22-19.png" width="400px"/>
+				  <figcaption>nearest sampling at 16 samples per pixel</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_16-22-44.png" width="400px"/>
+				  <figcaption>bilinear sampling at 1 sample per pixel</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_16-22-55.png" width="400px"/>
+				  <figcaption>bilinear sampling at 16 samples per pixel</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
 
 		<h2>Task 6: "Level Sampling" with mipmaps for texture mapping</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

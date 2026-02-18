@@ -36,7 +36,7 @@
 		
 		<br>
 
-		Link to GitHub repository: <a href="https://github.com/cal-cs184-student/hw-webpages-jasonjiang200">https://github.com/cal-cs184-student/hw-webpages-jasonjiang200</a>
+		Link to GitHub repository: <a href="https://github.com/cal-cs184-student/hw1-rasterizer-imperial-jade">https://github.com/cal-cs184-student/hw1-rasterizer-imperial-jade</a>
 
 		<figure>
 			<img src="lion.jpg" alt="Lion" style="width:50%"/>
@@ -100,8 +100,24 @@
 		</figure>
 			
 		<h2>Task 4: Barycentric coordinates</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Explain barycentric coordinates in your own words and use an image to aid you in your explanation. 
+		One idea is to use a svg file that plots a single triangle with one red, one green, and one blue vertex, which should produce a smoothly blended color triangle.
+		
 
+		Barycentric coordinates is a coordinate system for a triangle that allows us to express any point in the triangle as a weighted average of the vertices. Each coordinate is the weight of one point in the triangle and the three coordinates sum to 1 when normalized.
+		The image below represents this coordinate system. Each vertex of the triangle is a different color (red, white and black) and the color of each point in the triangle is a weighted average of the colors of the vertices. The closer a point is to a vertex, the more weight that vertex has in determining the color of that point. The points near the red vertex are more red, points near the white vertex are more white, and points near the black vertex are more black. 
+		Points in the middle of the triangle are a blend of all three colors.
+
+		<figure>
+			<img src="screenshot_2-10_17-45-10.png" alt="triangle" style="width:50%"/>
+			<figcaption>Barycentric coordinates in a triangle with red, white, and black vertices.</figcaption>
+		</figure>
+
+		<figure>
+			<img src="screenshot_2-17_16-38-9.png" alt="circle" style="width:50%"/>
+			<figcaption>Circle of colors generated with triangles colored with the same method as the above image.</figcaption>
+		</figure>
+		
 		<h2>Task 5: "Pixel sampling" for texture mapping</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 

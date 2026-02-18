@@ -50,6 +50,11 @@
 		<h2>Overview</h2>
 		Give a high-level overview of what you implemented in this homework. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the homework.
 
+		For this homework, we implemented a software rasterizer that can draw triangles, apply transforms, and perform antialiasing through various techniques. 
+		The anti-aliasing techniques we implemented included supersampling, pixel sampling for texture mapping, and level sampling with mipmaps for texture mapping.
+		Through this homework, we gained a deeper understanding of how to rasterize triangles and make them appear smooth with supersampling. We also learned how to apply
+		textures to those triangles in a way that looks good from different distances using mipmaps. Overall, it was a great introduction to the fundamentals of computer graphics and rasterization.
+
 		<h2>Task 1: Drawing Single-Color Triangles</h2>
 		First, we calculate the bounding box of the triangle. This means calculating the minimum and maximum x and y coordinate that appear among all 3 vertices. 
 		Next, we calculate the winding order of the vertices. This is done by calculating two vectors representing edges (AB and AC) of the triangle. With a clockwise winding order, the cross product will have a negative z-component and vice versa.
@@ -157,6 +162,31 @@
 		With bilinear sampling, we don't need to do many extra calculations, just a few interpolations. We also don't need extra memory. However, it's not as strong as supersampling at getting rid of aliasing artifacts.
 		With mipmaps, we spend 33% more memory to store the pre-downsampled textures, and we need to do some extra calculations to determine the appropriate level. The extra time it takes is minimal as well.
 		However, it is very effective at getting rid of aliasing artifacts when textures are viewed from a distance, since they are already pre-blurred. 
+
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_17-25-47.png" width="400px"/>
+				  <figcaption>L_ZERO and P_NEAREST</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_17-26-15.png" width="400px"/>
+				  <figcaption>L_ZERO and P_LINEAR</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_17-26-29.png" width="400px"/>
+				  <figcaption>L_NEAREST and P_NEAREST</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="screenshot_2-17_17-26-51.png" width="400px"/>
+				  <figcaption>L_NEAREST and P_LINEAR</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 
 
 		<h2>(Optional) Task 7: Extra Credit - Draw Something Creative!</h2>

@@ -109,7 +109,23 @@
 		<h3>Part 3: Area-weighted vertex normals</h3>
 		Using the iteration example from the primer, we are able to grab pairs of vertices that form a triangle with the vertex the function is called on. For each pair of other vertices, we calculate the vector between those vertices and the vertex we called the function on.
 		This lets us take a cross product, which gives the normal to the face. We sum up all the normals that we get from all the cross products and divide by the total of all norms. This gives us area weighting since the norm of the cross product is proportional to the area of the triangle.
-			
+		This gives a smoother shading result, seen below.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  
+			<tr>
+				<td style="text-align: center;">
+				  <img src="teapot_bad.png" width="400px"/>
+				  <figcaption>Flat shading</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="teapot_good.png" width="400px"/>
+				  <figcaption>Phong shading</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+		
 		<h3>Part 4: Edge flip</h3>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 

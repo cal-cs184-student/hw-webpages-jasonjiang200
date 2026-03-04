@@ -127,11 +127,85 @@
 		</div>
 		
 		<h3>Part 4: Edge flip</h3>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+		The edge flip operation is a local mesh editing operation that flips the direction of an edge. It requires the changing of many pointers around an edge. 
+		The pointers for the 6 half edges, 2 vertices, 2 faces and 1 edge involved in the edge flip needed to be changed.
+		A diagram below describes which half edges, vertices and faces are involved in the flip.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  
+			<tr>
+				<td style="text-align: center;">
+				  <img src="before.png" width="400px"/>
+				  <figcaption>Before edge flip</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="after.png" width="400px"/>
+				  <figcaption>After edge flip</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+		As shown in the diagram, the edge flip operation changes the eddges around each face (half edges 1, 2 and 3 for F1 to half edges 1, 3 and 5 around F1).
+		The half edges 1 and 4 are along the edge that flipped, so they vertices are 3 and 4, respectively. Finally, the neighbors of each half edge have changed so that needs to be reflected in code.
+
+		Below is an example of the teapot before and after some edge flips.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  
+			<tr>
+				<td style="text-align: center;">
+				  <img src="pot_no_flips.png" width="400px"/>
+				  <figcaption>Teapot before edge flips</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="pot_flips.png" width="400px"/>
+				  <figcaption>Teapot after edge flips</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		The debugging for this part mostly consisted of carefully checking through all of the pointer reassignments and making sure that they now point to the correct half edges, vertices and faces. Initially we were only changeing the half edge pointers, but realized that for it to fully work, vertex and face pointers needed to be changed as well.
 		<h3>Part 5: Edge split</h3>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		The edge split operation is a local mesh editing operation that splits an edge into two edges by adding a new vertex in the middle. It also requires changing many pointers around the edge, and the adding of a few new pointers.
+		The pointers for the 6 half edges, 2 vertices, 2 faces and 1 edge involved in the edge split needed to be changed, and we also needed to add a new vertex, 3 edges, 2 faces, and 6 half edges.
+		A diagram below describes which half edges, vertices and faces are involved in the split.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  
+			<tr>
+				<td style="text-align: center;">
+				  <img src="before.png" width="400px"/>
+				  <figcaption>Before edge split</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="after_split.png" width="400px"/>
+				  <figcaption>After edge split</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+		To perform the edge split, we created the new vertices, edges, faces, and half edges. Then, we connected them up according to the diagram above. Finally, we needed to change the pointers for the half edges, vertices and faces around the split edge to reflect the new topology.
 
+		Below are images of the split opereation on the teapot. The left has just splits, and the right has splits and flips.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  
+			<tr>
+				<td style="text-align: center;">
+				  <img src="splits.png" width="400px"/>
+				  <figcaption>Only splits on the teapot</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="split-flip.png" width="400px"/>
+				  <figcaption>Splits and flips on the teapot</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		The debugging for this part was similar to the edge flip, as the most important thing was to make sure all of the pointers were set to the correct edges, vertices, half edges, and faces. We also had to make sure that the new vertex was added to the correct position, which was the midpoint of the edge being split.
 		<h3>Part 6: Loop subdivision for mesh upsampling</h3>
 		For this part, we followed the suggested implementation route. The first two steps calculate new positions for existing vertices and edges for later. Then, we split all edges for our 4:1 split. However, in order to make all the new triangles be less skinny, we flip edges connecting new and old vertices.
 		This makes a pair of skinny triangles less skinny. After this, the vertices are moved to their new locations. One issue was that we needed to go back into the previous parts and add markers for isNew to use in this part.

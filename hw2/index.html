@@ -135,7 +135,30 @@
 		<h3>Part 6: Loop subdivision for mesh upsampling</h3>
 		For this part, we followed the suggested implementation route. The first two steps calculate new positions for existing vertices and edges for later. Then, we split all edges for our 4:1 split. However, in order to make all the new triangles be less skinny, we flip edges connecting new and old vertices.
 		This makes a pair of skinny triangles less skinny. After this, the vertices are moved to their new locations. One issue was that we needed to go back into the previous parts and add markers for isNew to use in this part.
-			
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="cube1.png" width="400px"/>
+				  <figcaption>Starting cube</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="cube2.png" width="400px"/>
+				  <figcaption>Iteration 1</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="cube3.png" width="400px"/>
+				  <figcaption>Iteration 2</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="cube4.png" width="400px"/>
+				  <figcaption>Iteration 3</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 		<h2>(Optional) Section III: Potential Extra Credit - Art Competition: Model something Creative</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 

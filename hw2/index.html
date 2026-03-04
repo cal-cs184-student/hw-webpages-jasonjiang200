@@ -159,6 +159,9 @@
 			  </tr>
 			</table>
 		</div>
+		The cube ends up looking asymmetrical because the triangle mesh itself starts off asymmetrical. By splitting each edge once before upsampling, it causes all faces to look the same (X pattern), which means that the final cube is fully symmetrical.
+			Alternatively, the edges can be flipped so that adjacent vertices have degree 0 and 3, alternating. This increases the number of axes of symmetry, but it is not as symmetrical as the split case, in a sense.
+		
 		<h2>(Optional) Section III: Potential Extra Credit - Art Competition: Model something Creative</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 

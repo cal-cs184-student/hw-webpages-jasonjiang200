@@ -246,5 +246,30 @@
 
 			</table>
 		</div>
+		Loop subdivision tends to smooth out sharp edges, such as this one on the teapot handle. It can be rememdied somewhat with edge splitting to improve the resolution near the edge before loop subdivision. The last image shows the effects of doing so.
+			<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="e1.png" width="400px"/>
+				  <figcaption>Starting handle</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="e2.png" width="400px"/>
+				  <figcaption>Iteration 1</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="e3.png" width="400px"/>
+				  <figcaption>Iteration 2</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="f1.png" width="400px"/>
+				  <figcaption>Iteration 2 with pre-splitting</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 	</body>
 </html>

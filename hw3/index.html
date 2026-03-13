@@ -52,7 +52,12 @@
 		Then, we set the ray's position to be the camera's position and give it the sampled direction, transformed with the c2w matrix. This generates a ray. 
 		Second, to illuminate a pixel, we sample randomly within a pixel for a chosen amount of samples, then average our results to get the radiance for that pixel.
 		When we add triangles and spheres to a scene, we need to be able to calculate the first intersection of a ray with an object. For intersections with triangles, we implement the Möller–Trumbore algorithm, which efficiently calculates the time at which a ray intersects a triangle. 
-		The algorithm also provides the barycentric coordinates of the intersection, allowing for smooth interpolation of the vertex normals.
+		The algorithm also provides the barycentric coordinates of the intersection, allowing for smooth interpolation of the vertex normals. For spheres, we follow an algorithm that uses the quadratic formula to calculate the up to 2 intersections, and take the one that occurs first since the second is blocked.
+		With all of this put together, we can render simple objects in the Cornell box.
+		<figure>
+			<img src="coil.png" alt="Cornell Boxes with Bunnies" style="width:70%"/>
+			<figcaption>A coil rendered in the box.</figcaption>
+		</figure>
 
 		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">

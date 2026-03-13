@@ -49,7 +49,9 @@
 
 		<h2>Part 1: Ray Generation and Scene Intersection</h2>
 		First, we set up the min_t and max_t for the ray, which we take from the camera. Then we find the x and y bounds of our screen, which are determined from the hFov and vFov. Then we calculate the direction of the ray using the change in x, y, and z, which is 1 by default.
-		Then, we set the ray's position to be the camera's position and give it the sampled direction. This generates a ray. 
+		Then, we set the ray's position to be the camera's position and give it the sampled direction, transformed with the c2w matrix. This generates a ray. 
+		Second, to illuminate a pixel, we sample randomly within a pixel for a chosen amount of samples, then average our results to get the radiance for that pixel.
+		When we add triangles and spheres to a scene, we need to be able to calculate the first intersection of a ray with an object.
 
 		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">

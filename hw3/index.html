@@ -32,7 +32,7 @@
 
 		<br>
 
-		Link to webpage: <a href="https://github.com/cal-cs184-student/hw-webpages-jasonjiang200">https://github.com/cal-cs184-student/hw-webpages-jasonjiang200</a>
+		Link to webpage: <a href="https://github.com/cal-cs184-student/hw-webpages-jasonjiang200">https://github.com/cal-cs184-student/hw-webpages-jasonjiang200</a><br>
 		Link to GitHub repository: <a href="https://github.com/cal-cs184-student/hw3-pathtracer-big-four-winds">https://github.com/cal-cs184-student/hw3-pathtracer-big-four-winds</a>
 		
 		<figure>
@@ -94,7 +94,7 @@
 		first checking if they were over a max leaf size. If so, then we recursed down by splitting the primitives into two partitions then calling the contruction algorithm on those partitions.
 		If not, then we hit a base case and the node created just stored those primitives. To split the primitives, we found the longest axis of the bounding box surrounding all of the primitives,
 		then splitting at the midpoint of that side of the bounding box. We used the centroid of the primitives' bounding boxes to split them into the two partitions.  
-
+		<br>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
@@ -109,7 +109,7 @@
 			  </tr>
 			</table>
 		</div>
-
+		<br>
 		For CBlucy.dae, render time without BVH acceleration is 147.2730 seconds. With BVH acceleration, rendering takes 0.0536 seconds.
 		For maxplank.dae, render time without BVH acceleration is 35.7926 seconds, whereas with acceleration it only takes 0.0570 seconds.
 		While CBlucy.dae has 133796 primitives and maxplank.dae has 50801 primitives, their render times with BVH acceleration are very similar. This shows the log(N) speedup from N with the naive algorithm well.

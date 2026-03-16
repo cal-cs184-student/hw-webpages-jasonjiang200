@@ -90,7 +90,29 @@
 		</div>
 		
 		<h2>Part 2: Bounding Volume Hierarchy</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		For our BVH construction algorithm, we implemented a recursive method that consisted of counting the number of primitives from start to end and 
+		first checking if they were over a max leaf size. If so, then we recursed down by splitting the primitives into two partitions then calling the contruction algorithm on those partitions.
+		If not, then we hit a base case and the node created just stored those primitives. To split the primitives, we found the longest axis of the bounding box surrounding all of the primitives,
+		then splitting at the midpoint of that side of the bounding box. We used the centroid of the primitives' bounding boxes to split them into the two partitions.  
+
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="meep.png" width="400px"/>
+				  <figcaption>CBlucy.dae rendered using our BVH acceleration.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="max.png" width="400px"/>
+				  <figcaption>maxplanck.dae rendered using out BVH acceleration.</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		For CBlucy.dae, render time without BVH acceleration is 147.2730 seconds. With BVH acceleration, rendering takes 0.0536 seconds.
+		For maxplank.dae, render time without BVH acceleration is 35.7926 seconds, whereas with acceleration it only takes 0.0570 seconds.
+		While CBlucy.dae has 133796 primitives and maxplank.dae has 50801 primitives, their render times with BVH acceleration are very similar. This shows the log(N) speedup from N with the naive algorithm well.
 
 		<h2>Part 3: Direct Illumination</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

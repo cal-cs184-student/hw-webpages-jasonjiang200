@@ -151,25 +151,28 @@
 			  <tr>
 				<td style="text-align: center;">
 				  <img src="first.png" width="400px"/>
-				  <figcaption>The beast with 1 light ray per pixel.</figcaption>
+				  <figcaption>The beast with 1 light ray.</figcaption>
 				</td>
 				<td style="text-align: center;">
 				  <img src="first_2.png" width="400px"/>
-				  <figcaption>The beast with 4 light rays per pixel.</figcaption>
+				  <figcaption>The beast with 4 light rays.</figcaption>
 				</td>
 			  </tr>
 			  <tr>
 				<td style="text-align: center;">
 				  <img src="first_3.png" width="400px"/>
-				  <figcaption>The beast with 16 light rays per pixel.</figcaption>
+				  <figcaption>The beast with 16 light rays.</figcaption>
 				</td>
 				<td style="text-align: center;">
 				  <img src="first_4.png" width="400px"/>
-				  <figcaption>The beast with 64 light rays per pixel.</figcaption>
+				  <figcaption>The beast with 64 light rays.</figcaption>
 				</td>
 			  </tr>
 			</table>
 		</div>
+		After implementing direct illumination, we can see that the hemisphere lighting results in a noisier image than the light source sampling, since many of the rays sampled in the hemisphere do not contribute to the pixel's radiance. Specifically, we noticed a small difference in noise for the pectoral muscles of the beast, which are in soft shadow.
+		Overall, hemisphere lighting is more computationally expensive than light source sampling, since it requires more rays to get a good estimate of the direct illumination. Lighting sampling is more efficient since it focuses sampling efforts in directions that are likely to contribute to the pixel's radiance, resulting in a less noisy image with fewer samples.
+		One benefit is that both methods are unbiased, which gives them good convergence properties. However, light source sampling is more efficient in scenes with small or distant light sources, while hemisphere lighting can be more effective in scenes with large or nearby light sources that are likely to be hit.
 
 
 		<h2>Part 4: Global Illumination</h2>

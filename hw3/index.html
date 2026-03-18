@@ -206,6 +206,114 @@
 		</div>
 		In both cases, soft shadows show up more clearly with global illumination, since light can bounce off of other surfaces and illuminate areas that are in shadow with direct illumination.
 		<br>
+
+		I SKIPPED DIRECT AND INDIRECT ILLUMINATION BC IDK HOW TO DO IT
+
+		<br>
+		Now, we compare accumlated vs unaccumulated results for the bunny. We can see that the accumulated results are brighter than the unaccumulated results, since they include the contribution of all bounces up to the max depth, whereas the unaccumulated results only include the contribution of the last bounce.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bunny0accum.png" width="400px"/>
+				  <figcaption>The bunny with 0 bounces (accumulated).</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="bunny0unaccum.png" width="400px"/>
+				  <figcaption>The bunny with 0 bounces (unaccumulated).</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bunny1accum.png" width="400px"/>
+				  <figcaption>The bunny with 1 bounce (accumulated).</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="bunny1unaccum.png" width="400px"/>
+				  <figcaption>The bunny with 1 bounce (unaccumulated).</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bunny2accum.png" width="400px"/>
+				  <figcaption>The bunny with 2 bounces (accumulated).</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="bunny2unaccum.png" width="400px"/>
+				  <figcaption>The bunny with 2 bounces (unaccumulated).</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bunny3accum.png" width="400px"/>
+				  <figcaption>The bunny with 3 bounces (accumulated).</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="bunny3unaccum.png" width="400px"/>
+				  <figcaption>The bunny with 3 bounces (unaccumulated).</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bunny4accum.png" width="400px"/>
+				  <figcaption>The bunny with 4bounces (accumulated).</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="bunny4unaccum.png" width="400px"/>
+				  <figcaption>The bunny with 4 bounces (unaccumulated).</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bunny5accum.png" width="400px"/>
+				  <figcaption>The bunny with 5 bounces (accumulated).</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="bunny5unaccum.png" width="400px"/>
+				  <figcaption>The bunny with 5 bounces (unaccumulated).</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		<br>
+		Now we compare the bunny with different numbers of bounces using the Russian Roulette method.
+				<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="rrbunny0.png" width="400px"/>
+				  <figcaption>The bunny with 0 bounces.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="rrbunny1.png" width="400px"/>
+				  <figcaption>The bunny with 1 bounces.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="rrbunny2.png" width="400px"/>
+				  <figcaption>The bunny with 2 bounce.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="rrbunny3.png" width="400px"/>
+				  <figcaption>The bunny with 3 bounce.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="rrbunny4.png" width="400px"/>
+				  <figcaption>The bunny with 4 bounces.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="rrbunny100.png" width="400px"/>
+				  <figcaption>The bunny with 100 bounces.</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		<br>
 		Finally, we have a comparison of results with different numbers of samples per pixel.
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">

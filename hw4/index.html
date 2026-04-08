@@ -142,8 +142,9 @@
 			<figcaption>Cloth pinned at 4 corners, default parameters.</figcaption>
 		</figure>
 		<h2>Part 3: Handling collisions with other objects</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+		To implement collisions with spheres, we followed the algorithm line by line, calculating the unit normal, would-be collision point, and correction vector. For planes, we take the dot product of the plane's normal with the vector from a point on the plane to the mass's position, which is positive or negative depending on which side of the plane the point mass is on.
+			We compare signs to see if the mass went through the plane, in which case we bounce it back to the other side of the plane.
+			
 		<figure>
 		<img src="plane.png" alt="Cloth draped over sphere" style="width:70%"/>
 		<figcaption>The cloth on a plane.</figcaption>

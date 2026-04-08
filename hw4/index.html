@@ -144,6 +144,28 @@
 		<h2>Part 3: Handling collisions with other objects</h2>
 		To implement collisions with spheres, we followed the algorithm line by line, calculating the unit normal, would-be collision point, and correction vector. For planes, we take the dot product of the plane's normal with the vector from a point on the plane to the mass's position, which is positive or negative depending on which side of the plane the point mass is on.
 			We compare signs to see if the mass went through the plane, in which case we bounce it back to the other side of the plane.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="500.png" width="400px"/>
+				  <figcaption>ks = 500 N/m</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="5k.png" width="400px"/>
+				  <figcaption>ks = 5,000 N/m</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="50k.png" width="400px"/>
+				  <figcaption>ks = 50,000 N/m</figcaption>
+				</td>
+				
+			  </tr>
+			</table>
+		</div>
+			Comparing the cloths with different spring constants, we see the cloth get stiffer as we increase the spring constant. At first, it looks like a thin scarf or some other fabric, but at 50,000 more like construction paper or some plastic.
 			
 		<figure>
 		<img src="plane.png" alt="Cloth draped over sphere" style="width:70%"/>

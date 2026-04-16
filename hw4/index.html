@@ -177,7 +177,30 @@
 		<h2>Part 5: Shaders</h2>
 		Shaders take advantage of GPUs to parallelize parts of the graphics pipeline and speed up rendering. Vertex shaders modify/transform vertices of the geometry as well as their properties. These vertices are passed to fragment shaders, which process the vertices and output color for the fragments in the geometry.
 		The Blinn-Phong shading model splits the lighting into three distinct components. They are ambient lighting, diffuse lighting, and specular. This makes it more realistic than a model of only diffuse lighting because the surface can now have glare.
-			
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="ambient.png" width="400px"/>
+				  <figcaption>Just the ambient lighting. Constant everywhere, just to ensure no area ends up pitch black.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="diffuse.png" width="400px"/>
+				  <figcaption>Just the diffuse lighting. Does most of the heavy lifting.</figcaption>
+				</td>
+			  </tr>
+			<tr>
+			<td style="text-align: center;">
+			  <img src="specular.png" width="400px"/>
+			  <figcaption>Just the specular lighting. Very small differences on its own but makes a big difference in the full rendering.</figcaption>
+			</td>
+			<td style="text-align: center;">
+			  <img src="blinn.png" width="400px"/>
+			  <figcaption>The full shader program.</figcaption>
+			</td>
+		  </tr>
+			</table>
+		</div>
 		<h2>(Optional) Part 6: Extra Credit - Additional cloth simulation features!</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		

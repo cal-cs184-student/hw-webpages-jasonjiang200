@@ -223,6 +223,31 @@
 		  </tr>
 			</table>
 		</div>
+		We compare the number of sphere samples at 16 and 128 samples.
+			<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bump16.png" width="400px"/>
+				  <figcaption>At 16 samples, the rings don't look very good.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="dis16.png" width="400px"/>
+				  <figcaption>Same with the displacement, the rings look very bad.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bump128.png" width="400px"/>
+				  <figcaption>Now the sampling rate is high enough to get good texture.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="dis128.png" width="400px"/>
+				  <figcaption>The displacement mapping also looks good.</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 
 		Lastly, we implemented the mirror shader.
 			<div style="display: flex; flex-direction: column; align-items: center;">

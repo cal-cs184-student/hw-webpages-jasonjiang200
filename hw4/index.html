@@ -172,7 +172,78 @@
 		<figcaption>The cloth on a plane.</figcaption>
 		</figure>
 		<h2>Part 4: Handling self-collisions</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		To handle self-collisions, at each time step, we go through all of the point masses and assign a spatial hash by putting it through a hash function based on its current position.
+		Then, to check for self collisions, we go through each point mass again, and check all of the point masses assigned to the same spatial hash to see if they are 2 * thickness away from each other.
+		If so, we apply a correction vector to the point mass so that it is 2 * thickness away from each other point mass, scaled down by the current simulation step.
+	
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="initial.png" width="400px"/>
+				  <figcaption>Initial self collisions.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="medium.png" width="400px"/>
+				  <figcaption>Self collisions while coming to rest.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="rest.png" width="400px"/>
+				  <figcaption>Self collisions at rest.</figcaption>
+				</td>
+				
+			  </tr>
+			</table>
+		</div>
+
+		When varying the density and ks, general trends similar to those described above can be seen.
+
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="1self.png" width="400px"/>
+				  <figcaption>Self collision simulation with density 1 g/cm^2; the cloth falls in a more flowy manner, like a piece of paper. The final rest state has few folds, and is very flat.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="15self.png" width="400px"/>
+				  <figcaption>Self collisions simulation with density 15 g/cm^2; this is the control, cloth falls like the simulation shown in detail above.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="100self.png" width="400px"/>
+				  <figcaption>Self collisions simulation with density 100 g/cm^2; the cloth falls on itself more, like a heavy piece of chainmail. The final rest state has more folds, and the surface is more bumpy.</figcaption>
+				</td>
+				
+			  </tr>
+			</table>
+		</div>
+
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="1000self.png" width="400px"/>
+				  <figcaption>Self collision simulation with ks 1000 Nm; the cloth falls like a loose fabric, with many wrinkles and little resistance to lay flat once it hits the ground.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="5000self.png" width="400px"/>
+				  <figcaption>Self collisions simulation with ks 5000 Nm; this is the control, cloth falls like the simulation shown in detail above.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="10000self.png" width="400px"/>
+				  <figcaption>Self collisions simulation with ks 10000 Nm; the cloth falls more stiffly, with more resistance to lay flat once it hits the ground.</figcaption>
+				</td>
+				
+			  </tr>
+			</table>
+		</div>
+
 
 		<h2>Part 5: Shaders</h2>
 		Shaders take advantage of GPUs to parallelize parts of the graphics pipeline and speed up rendering. Vertex shaders modify/transform vertices of the geometry as well as their properties. These vertices are passed to fragment shaders, which process the vertices and output color for the fragments in the geometry.
